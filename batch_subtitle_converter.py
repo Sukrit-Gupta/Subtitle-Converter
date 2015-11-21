@@ -1,3 +1,4 @@
+# removed [br] tags if anywhere in the file.
 # added functionality: will do batch conversion for all files in the current working directory.
 import os
 all_srt_files = [fl for fl in os.listdir('.') if os.path.isfile(fl) and fl[-3:] == "srt"]
@@ -28,8 +29,11 @@ def subtitle_converter(file_name):
             modified_splitted_file.insert(insertion_point_in_new_file,i/3)
             continue
     '''
-
+    count = 0   # in old file
     for line in splitted_file:
+        if "[br]" in line: 
+            splitted_file[count] = line.replace("[br]","")
+        count = count + 1
         # try: print line.replace(",", " --> ", 1).replace(".", ",", 2)
         # except: pass
         c_index = c_index + 1
@@ -43,6 +47,7 @@ def subtitle_converter(file_name):
             # print line[0:3]
             if line[0:3] == ">> ": modified_splitted_file[c_index] = ""+ line[3:]
         except: pass
+        
         if len(line) < 15 : continue
         if line.find(":") == -1 : continue
         ind = line.find(":")
@@ -57,6 +62,9 @@ def subtitle_converter(file_name):
         except:
             print "'{}' line".format(line)
     modified_splitted_file.pop()
+    for n in xrange(len(modified_splitted_file)):
+        if "[br]" in modified_splitted_file[n]: modified_splitted_file[n] = modified_splitted_file[n].replace("[br]"," ")
+            
     new_file_string = "\n".join(modified_splitted_file)
     # print new_file_string
 
