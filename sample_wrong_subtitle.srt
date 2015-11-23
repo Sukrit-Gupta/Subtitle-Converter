@@ -1,29 +1,29 @@
-0:00:00,730 --> 0:00:02,050
+0:00:00.730 , 0:00:02.050
 Hi. This is a sample srt file.
 
-0:00:02,050 --> 0:00:04,300
+0:00:02.050 , 0:00:04.300
 We will convert subtitle from
 
-0:00:04,300 --> 0:00:05,350
+0:00:04.300 , 0:00:05.350
 this type of format to some other format.
 
-0:00:05,350 --> 0:00:08,340
+0:00:05.350 , 0:00:08.340
 Basically, the "," in the above
 
-0:00:08,340 --> 0:00:09,960
+0:00:08.340 , 0:00:09.960
 timestamp file is replaced by " --> ".
 
-0:00:09,960 --> 0:00:12,610
+0:00:09.960 , 0:00:12.610
 and added subtitle index numbers before
 
-0:00:12,610 --> 0:00:13,530
+0:00:12.610 , 0:00:13.530
 the start of subtitle.
 
-0:00:13,530 --> 0:00:15,720
+0:00:13.530 , 0:00:15.720
 So if I have lots of files
 
-0:00:15,720 --> 0:00:16,600
+0:00:15.720 , 0:00:16.600
 then this process would be tiresome.
 
-0:00:16,600 --> 0:00:19,320
+0:00:16.600 , 0:00:19.320
 So I made this python file.
