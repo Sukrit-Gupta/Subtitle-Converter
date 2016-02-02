@@ -1,5 +1,6 @@
 # removed [br] tags if anywhere in the file.
 # added functionality: will do batch conversion for all files in the current working directory.
+from __future__ import print_function
 import os
 all_srt_files = [fl for fl in os.listdir('.') if os.path.isfile(fl) and fl[-3:] == "srt"]
 
@@ -22,7 +23,7 @@ def subtitle_converter(file_name):
     # print type(modified_splitted_file)
     '''
     insertion_point_in_new_file = 0
-    for i in xrange(len(splitted_file)):
+    for i in range(len(splitted_file)):
         if splitted_file[i] = ""
             insertion_point_in_new_file = insertion_point_in_new_file + 1
             subtitle_index = subtitle_index + 1
@@ -60,9 +61,9 @@ def subtitle_converter(file_name):
                 modified_splitted_file[c_index] = line.replace(",", " --> ", 1).replace(".", ",", 2) #this line was the culprit, and I checked almost the whole code
                 # print "working"
         except:
-            print "'{}' line".format(line)
+            print("'{}' line".format(line))
     modified_splitted_file.pop()
-    for n in xrange(len(modified_splitted_file)):
+    for n in range(len(modified_splitted_file)):
         if "[br]" in modified_splitted_file[n]: modified_splitted_file[n] = modified_splitted_file[n].replace("[br]"," ")
             
     new_file_string = "\n".join(modified_splitted_file)
@@ -70,7 +71,7 @@ def subtitle_converter(file_name):
 
     fw = open(file_name, "w")
     fw.write(new_file_string)
-    print "'{}' converted successfully".format(file_name)
+    print("'{}' converted successfully".format(file_name))
     return
 
 for srt in all_srt_files:
